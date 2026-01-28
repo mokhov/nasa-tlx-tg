@@ -15,4 +15,4 @@ ENV PORT=3000
 # Needed only for webhook-mode. Long polling doesn't require inbound ports.
 EXPOSE 3000
 
-CMD ["node", "bot.js"]
+CMD ["node", "src/index.js"]

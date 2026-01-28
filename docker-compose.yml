@@ -5,9 +5,21 @@ services:
     environment:
       # Рекомендуется задавать через окружение/панель, а не хранить в файле
       BOT_TOKEN: ${BOT_TOKEN}
+      DATABASE_URL: ${DATABASE_URL}
       # WEBHOOK_DOMAIN: ${WEBHOOK_DOMAIN}
       # WEBHOOK_PATH: ${WEBHOOK_PATH:-/telegram}
       # PORT: ${PORT:-3000}
     # Для webhook режима нужен проброс порта
     # ports:
     #   - "3000:3000"
+
+  # Локальная БД для разработки (опционально)
+  # postgres:
+  #   image: postgres:16-alpine
+  #   restart: unless-stopped
+  #   environment:
+  #     POSTGRES_DB: nasa_tlx
+  #     POSTGRES_USER: nasa
+  #     POSTGRES_PASSWORD: nasa
+  #   ports:
+  #     - "5432:5432"

@@ -27,6 +27,11 @@ cp env.example .env
 BOT_TOKEN=your_bot_token_here
 ```
 
+5. (Опционально) Настройте БД Postgres:
+```
+DATABASE_URL=postgres://user:password@host:5432/dbname
+```
+
 ## Запуск
 
 ### Режим разработки (с автоперезагрузкой):
@@ -76,13 +81,19 @@ npm start
 
 ```
 nasa-tlx-tg/
-├── bot.js          # Основной файл бота
 ├── Dockerfile      # Сборка контейнера
 ├── docker-compose.yml
 ├── .dockerignore
+├── bot.js          # Совместимость: entrypoint (импортирует src/index.js)
 ├── package.json    # Зависимости проекта
 ├── env.example     # Пример файла с переменными окружения
 ├── .gitignore      # Игнорируемые файлы для Git
+├── src/            # Исходники
+│   ├── index.js
+│   ├── logger.js
+│   ├── config/
+│   ├── bot/
+│   └── db/
 └── README.md       # Документация
 ```
 

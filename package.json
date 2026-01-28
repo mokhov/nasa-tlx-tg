@@ -2,11 +2,11 @@
   "name": "nasa-tlx-tg",
   "version": "1.0.0",
   "description": "Telegram bot for NASA TLX",
-  "main": "bot.js",
+  "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "start": "node bot.js",
-    "dev": "node --watch bot.js"
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
   },
   "keywords": [
     "telegram",
@@ -18,7 +18,8 @@
   "license": "MIT",
   "dependencies": {
     "telegraf": "^4.15.0",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "pg": "^8.13.1"
   },
   "engines": {
     "node": ">=18.0.0"
