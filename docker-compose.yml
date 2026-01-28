@@ -1,0 +1,13 @@
+services:
+  bot:
+    build: .
+    restart: unless-stopped
+    environment:
+      # Рекомендуется задавать через окружение/панель, а не хранить в файле
+      BOT_TOKEN: ${BOT_TOKEN}
+      # WEBHOOK_DOMAIN: ${WEBHOOK_DOMAIN}
+      # WEBHOOK_PATH: ${WEBHOOK_PATH:-/telegram}
+      # PORT: ${PORT:-3000}
+    # Для webhook режима нужен проброс порта
+    # ports:
+    #   - "3000:3000"
